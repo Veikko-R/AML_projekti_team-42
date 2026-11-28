@@ -29,7 +29,7 @@ def filterTeam(df, team):
     result = np.where(home, as_home, as_away)
 
     processed = pd.DataFrame({
-        'Date':          filtered['Date'].to_numpy(),
+        'Date':          filtered['MatchDate'].to_numpy(),
         'isHome':        home.astype(int).to_numpy(),
         'TeamElo':       np.where(home, filtered['HomeElo'],   filtered['AwayElo']),
         'OpponentElo':   np.where(home, filtered['AwayElo'],   filtered['HomeElo']),
