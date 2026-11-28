@@ -25,19 +25,19 @@ def filterTeam(df, team):
     result = np.where(home, as_home, as_away)
 
     processed = pd.DataFrame({
-        'Date':          filtered['Date'].to_numpy()
-        'isHome':        home.astype(int).to_numpy()
-        'TeamElo':       np.where(home, games['HomeElo'],   games['AwayElo']),
-        'OpponentElo':   np.where(home, games['AwayElo'],   games['HomeElo']),
-        'Form3Team':     np.where(home, games['Form3Home'], games['Form3Away']),
-        'Form3Opponent': np.where(home, games['Form3Away'], games['Form3Home']),
-        'Form5Team':     np.where(home, games['Form5Home'], games['Form5Away']),
-        'Form5Opponent': np.where(home, games['Form5Away'], games['Form5Home']),
-        'HTTeam':        np.where(home, games['HTHome'],    games['HTAway']),
-        'HTOpponent':    np.where(home, games['HTAway'],    games['HTHome']),
-        'OddTeam':       np.where(home, games['OddHome'],   games['OddAway']),
-        'OddOpponent':   np.where(home, games['OddAway'],   games['OddHome']),
-        'OddDraw':       games['OddDraw'].to_numpy(),
+        'Date':          filtered['Date'].to_numpy(),
+        'isHome':        home.astype(int).to_numpy(),
+        'TeamElo':       np.where(home, filtered['HomeElo'],   filtered['AwayElo']),
+        'OpponentElo':   np.where(home, filtered['AwayElo'],   filtered['HomeElo']),
+        'Form3Team':     np.where(home, filtered['Form3Home'], filtered['Form3Away']),
+        'Form3Opponent': np.where(home, filtered['Form3Away'], filtered['Form3Home']),
+        'Form5Team':     np.where(home, filtered['Form5Home'], filtered['Form5Away']),
+        'Form5Opponent': np.where(home, filtered['Form5Away'], filtered['Form5Home']),
+        'HTTeam':        np.where(home, filtered['HTHome'],    filtered['HTAway']),
+        'HTOpponent':    np.where(home, filtered['HTAway'],    filtered['HTHome']),
+        'OddTeam':       np.where(home, filtered['OddHome'],   filtered['OddAway']),
+        'OddOpponent':   np.where(home, filtered['OddAway'],   filtered['OddHome']),
+        'OddDraw':       filtered['OddDraw'].to_numpy(),
         'Result':        result,
     })
 
