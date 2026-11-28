@@ -1,4 +1,8 @@
 def filterTeam(df, team):
+
+    import numpy as np
+    import pandas as pd
+
     """Select all matches played by a given team.
 
     Returns every row where the team appears as either the home team
