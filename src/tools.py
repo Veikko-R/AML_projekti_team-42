@@ -24,7 +24,7 @@ def filterTeam(df, team):
 
     home = filtered['HomeTeam'] == team
     as_home = filtered['FTResult'].map({'H': 'W', 'D': 'D', 'A': 'L'})
-    as_away = filtered['FTResult'].map({'H': 'L', 'D': 'D', 'A': 'D'})
+    as_away = filtered['FTResult'].map({'H': 'L', 'D': 'D', 'A': 'W'})
 
     result = np.where(home, as_home, as_away)
 
